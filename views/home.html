@@ -1,0 +1,57 @@
+<container class="col-sm-10 col-sm-offset-1 alignCenter">
+  <h3 class="colorPurple">How Much Money Could YOU Save with Carefree Dental?</h3>
+
+  <br>
+
+  <div>
+    <h5 class='inline colorPurple'><strong>Step 1: </strong></h5><h5 class='inline'><strong>Select how many people are in your household</strong></h5>
+  </div>
+
+  <div id='iconWrap'>
+    <span ng-class="{'colorPurple': icon.iconIndex <= selectedMembers}" class="glyphicon glyphicon-user icon" ng-repeat="icon in userIcons" ng-click="iconClick(icon.iconIndex)"></span>
+  </div>
+
+  <br>
+
+  <div ng-hide="selectedMembers">
+    <p>Please select how many people are in your household before moving to step 2.</p>
+  </div>
+
+  <br>
+
+  <div ng-show="selectedMembers" id="phaseTwo">
+    <div>
+      <h5 class="inline colorPurple"><strong>Step 2: </strong></h5><h5 class='inline'><strong>See how much you could save by selecting the sevices you need below:</strong></h5>
+    </div>
+    <br>
+    <p>The following dental savings information chart compares actual costs to discounted costs for common dental services.</p>
+    <p>We've already filled in a few boxes for you to help you get started.</p>
+
+
+    <form action="">
+      <table>
+
+        <thead>
+          <tr>
+            <td class="rotate" ng-repeat="service in services">{{service.title}}</td>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr ng-repeat="member in members"></tr>
+
+        </tbody>
+
+
+      </table>
+    </form>
+
+
+
+  </div>
+
+
+
+</container>

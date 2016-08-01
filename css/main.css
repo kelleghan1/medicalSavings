@@ -1,0 +1,48 @@
+form {
+  width: 100%
+}
+
+table {
+  width: 100%
+  
+}
+
+
+.alignCenter {
+  text-align: center;
+}
+
+
+.iconWrap {
+  width: 80%;
+}
+
+.colorPurple {
+  color: purple;
+}
+
+.icon {
+  cursor: pointer;
+  width: 8%;
+  padding: 1%
+}
+
+.icon:hover {
+  color: purple;
+}
+
+.glyphicon-user {
+  font-size: 25px
+}
+
+.inline {
+  display: inline;
+}
+
+.rotate {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  /*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
+}
