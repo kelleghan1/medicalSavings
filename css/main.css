@@ -1,12 +1,66 @@
+container {
+}
+
+input[type=checkbox] {
+  margin: 0!important;
+}
+
+.selectAll {
+  font-size: 10px;
+  margin: 0;
+  vertical-align: bottom;
+}
+
+.tableHeader {
+  background-color: #eaeaea;
+}
+
+td {
+  padding: 10px 10px!important;
+  border: 1px solid #ccc;
+}
+
+th {
+  /*width: 30px;*/
+  margin: 10px 0;
+  overflow: auto;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+th.rotate {
+  height: 120px;
+  white-space: nowrap;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+th.rotate > div {
+  transform: rotate(270deg);
+  width: 30px;
+  margin: 0 auto;
+  display: block;
+}
+
+th.rotate > div > span {
+  padding: 5px 10px;
+  display: block;
+}
+
+.clear {
+  clear: both;
+}
+
 form {
-  width: 100%
+  width: 100%;
+  display: inline-block;
 }
 
 table {
-  width: 100%
-  
+  margin: 0 auto;
+  width: 80%;
 }
-
 
 .alignCenter {
   text-align: center;
@@ -23,7 +77,6 @@ table {
 
 .icon {
   cursor: pointer;
-  width: 8%;
   padding: 1%
 }
 
@@ -36,13 +89,32 @@ table {
 }
 
 .inline {
-  display: inline;
+  margin: 0 auto
 }
 
-.rotate {
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  /*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
+.mobileShow {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+
+  table {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  td {
+    padding: 5px 0px!important;
+  }
+
+  .mobileHide {
+    display: none;
+    border: 0;
+  }
+
+  .mobileShow {
+    padding: 10px!important;
+    display: block;
+  }
+
 }

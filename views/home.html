@@ -20,27 +20,42 @@
   <br>
 
   <div ng-show="selectedMembers" id="phaseTwo">
+
     <div>
       <h5 class="inline colorPurple"><strong>Step 2: </strong></h5><h5 class='inline'><strong>See how much you could save by selecting the sevices you need below:</strong></h5>
     </div>
+
     <br>
+
     <p>The following dental savings information chart compares actual costs to discounted costs for common dental services.</p>
     <p>We've already filled in a few boxes for you to help you get started.</p>
 
-
-    <form action="">
+    <form ng-submit="submitForm()">
       <table>
 
         <thead>
-          <tr>
-            <td class="rotate" ng-repeat="service in services">{{service.title}}</td>
-          </tr>
-
+          <th></th>
+          <th class="rotate" ng-repeat="service in services"><div><span>{{service.title}}</span></div></th>
         </thead>
 
         <tbody>
 
-          <tr ng-repeat="member in members"></tr>
+          <tr class="tableHeader">
+            <td><strong class="mobileHide"># of individuals</strong></td>
+            <td class="tableData" ng-repeat="service in services">
+              <p class="selectAll">Select All</p>
+              <input type="checkbox">
+            </td>
+            <td><strong>Annual Savings</strong></td>
+          </tr>
+
+          <tr ng-repeat="member in members">
+            <td><span class="mobileHide">Member {{member.id}}</span><span class="mobileShow">{{member.id}}</span></td>
+            <td ng-repeat="service in services">
+              <input type="checkbox" ng-click="addVal($event, member.id, service.savings)">
+            </td>
+            <td><strong>$ {{member.value}}</strong></td>
+          </tr>
 
         </tbody>
 
