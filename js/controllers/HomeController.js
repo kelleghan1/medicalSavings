@@ -7,55 +7,45 @@ thisApp
     $scope
   ){
 
+    $scope.totalSavings = 0;
     $scope.userIcons = [];
     $scope.selectedMembers = null;
     $scope.members = [];
     $scope.services = [
-      { tag: "oe", title: "Oral Exam", savings: 100, selected: true },
-      { tag: "cl", title: "Cleaning", savings: 100, selected: true },
-      { tag: "fi", title: "Filling", savings: 100, selected: false },
-      { tag: "xr", title: "X-Rays", savings: 100, selected: false },
-      { tag: "rc", title: "Root Canal", savings: 100, selected: false },
-      { tag: "cr", title: "Crown", savings: 100, selected: false },
-      { tag: "ud", title: "Upper Denture", savings: 100, selected: false },
-      { tag: "br", title: "Braces", savings: 100, selected: false }
+      { title: "Oral Exam", savings: 100, selected: true },
+      { title: "Cleaning", savings: 50, selected: true },
+      { title: "Filling", savings: 200, selected: false },
+      { title: "X-Rays", savings: 150, selected: false },
+      { title: "Root Canal", savings: 175, selected: false },
+      { title: "Crown", savings: 225, selected: true },
+      { title: "Upper Denture", savings: 275, selected: false },
+      { title: "Braces", savings: 75, selected: false }
     ]
 
     for (var i = 1; i <= 10; i++) {
       $scope.userIcons.push({iconIndex: i })
     }
 
-    $scope.addVal = function($event, member, val){
-      var checkbox = $event.target;
+    $scope.getTotals = function(member){
+      var result = 0;
+      var currentNode = angular.element( document.querySelector('#memberRow' + member))[0].childNodes
 
-      if (checkbox.checked) {
+      for (var i = 0; i < currentNode.length; i++) {
+        if(currentNode[i].childNodes){
+          for (var j = 0; j < currentNode[i].childNodes.length; j++) {
 
-        for (var i = 0; i < $scope.members.length; i++) {
-          if ($scope.members[i].id == member) {
-            $scope.members[i].value += val
+            if (currentNode[i].childNodes[j].checked) {
+              result += parseInt(currentNode[i].childNodes[j].value)
+            }
+
           }
         }
-
-      }else{
-
-        for (var i = 0; i < $scope.members.length; i++) {
-          if ($scope.members[i].id == member) {
-            $scope.members[i].value -= val
-          }
-        }
-
       }
-    }
 
-    // $scope.checkAll = function (service) {
-    //
-    //   for (var i = 0; i < $scope.members; i++) {
-    //     if ($scope.members[i].title == service) {
-    //       $scope.services[i].selected = true
-    //     }
-    //   }
-    //
-    // };
+      $scope.totalSavings += result;
+      return result
+
+    }
 
     $scope.iconClick = function(index){
       $scope.members = [];

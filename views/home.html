@@ -44,17 +44,17 @@
             <td><strong class="mobileHide"># of individuals</strong></td>
             <td class="tableData" ng-repeat="service in services">
               <p class="selectAll">Select All</p>
-              <input type="checkbox">
+              <input type="checkbox" ng-model="service.selected">
             </td>
             <td><strong>Annual Savings</strong></td>
           </tr>
 
-          <tr ng-repeat="member in members">
+          <tr ng-repeat="member in members" id="{{'memberRow' + member.id}}">
             <td><span class="mobileHide">Member {{member.id}}</span><span class="mobileShow">{{member.id}}</span></td>
             <td ng-repeat="service in services">
-              <input type="checkbox" ng-click="addVal($event, member.id, service.savings)">
+              <input type="checkbox" ng-click="getTotals(member.id)" ng-checked="service.selected" value="{{service.savings}}">
             </td>
-            <td><strong>$ {{member.value}}</strong></td>
+            <td><strong>${{getTotals(member.id)}}</strong></td>
           </tr>
 
         </tbody>
@@ -62,6 +62,8 @@
 
       </table>
     </form>
+
+    <!-- <div><h1>Savings: {{totalSavings}}</h1></div> -->
 
 
 
