@@ -17,7 +17,7 @@ thisApp
       { title: "Filling", savings: 200, selected: false },
       { title: "X-Rays", savings: 150, selected: false },
       { title: "Root Canal", savings: 175, selected: false },
-      { title: "Crown", savings: 225, selected: true },
+      { title: "Crown", savings: 225, selected: false },
       { title: "Upper Denture", savings: 275, selected: false },
       { title: "Braces", savings: 75, selected: false }
     ]
@@ -25,7 +25,6 @@ thisApp
     for (var i = 1; i <= 10; i++) {
       $scope.userIcons.push({iconIndex: i })
     }
-
 
     $scope.getTotals = function(member){
       var result = 0;
