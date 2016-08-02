@@ -26,6 +26,7 @@ thisApp
       $scope.userIcons.push({iconIndex: i })
     }
 
+
     $scope.getTotals = function(member){
       var result = 0;
       var currentNode = angular.element( document.querySelector('#memberRow' + member))[0].childNodes
@@ -41,8 +42,8 @@ thisApp
           }
         }
       }
-
-      $scope.totalSavings += result;
+      $scope.members[member-1].value = result;
+      $scope.getTotalSavings();
       return result
 
     }
@@ -57,6 +58,45 @@ thisApp
           value: 0
         })
       }
+
+    }
+
+    $scope.addMember = function(){
+      $scope.members.push({
+        id: $scope.selectedMembers + 1,
+        value: 0
+      });
+
+      $scope.selectedMembers ++;
+
+    }
+
+    $scope.getTotalSavings = function(){
+      var total = 0;
+
+      for (var i = 0; i < $scope.members.length; i++) {
+        total += $scope.members[i].value
+      }
+
+      $scope.totalSavings = total;
+    }
+
+    $scope.getMovie = function() {
+      return Math.floor($scope.totalSavings/10)
+    }
+
+    $scope.submitForm = function(){
+
+      var postObj = {
+        members: $scope.members,
+        total: $scope.totalSavings
+      }
+
+      //  Example of post request with request object
+      //  $http.post('https://example.com', postObj)
+      //  .then(function(res){
+      //  return res
+      //  }
 
     }
 

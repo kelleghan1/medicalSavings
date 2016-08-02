@@ -57,13 +57,25 @@
             <td><strong>${{getTotals(member.id)}}</strong></td>
           </tr>
 
+          <tr>
+            <td class="addMember"><span ng-click="addMember()">+ Add Another Person</span></td>
+            <td class="disclaimer" colspan="9">This is an example only. Actual costs may vary by provider, service and geographic area. Cost of card: $191.40. ($15.95/mo for 12 months)</td>
+          </tr>
+
         </tbody>
 
-
       </table>
-    </form>
 
-    <!-- <div><h1>Savings: {{totalSavings}}</h1></div> -->
+      <br>
+
+      <div>
+        <div class="halfPageLeft"><h5>Cost of the Carefree Dental Card:</h5><h1>$15.95/mo</h1><p>Annual cost of the Carefree Dental card is $191.40.</p></div>
+        <div class="halfPageRight"><h5>Estimated Yearly Savings: </h5><h1>${{totalSavings}}</h1><p>That's over {{getMovie()}} movie tickets!</p></div>
+      </div>
+
+      <input type="submit" class="btn btn-warning" value="Sign Up & Start Saving Today!">
+
+    </form>
 
 
 

@@ -1,8 +1,49 @@
 container {
 }
 
+.btn {
+  margin-top: 20px;
+}
+
+p {
+  font-size: 10px
+}
+
+h1 {
+  margin-top: 0!important;
+  font-weight: lighter!important;
+}
+
 input[type=checkbox] {
   margin: 0!important;
+}
+
+.halfPageLeft {
+  float: left;
+  width: 50%;
+  box-sizing:border-box;
+}
+.halfPageRight {
+  float: left;
+  width: 50%;
+  box-sizing:border-box;
+  border-left: 1px solid #ccc
+}
+
+.addMember {
+  float: left;
+  color: purple;
+  text-decoration: underline;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+.disclaimer {
+  font-size: 8px;
+  text-align: right;
+  border: 0;
+  border-bottom: 1px solid #ccc
+
 }
 
 .selectAll {
@@ -15,21 +56,28 @@ input[type=checkbox] {
   background-color: #eaeaea;
 }
 
+table {
+  margin: 0 auto;
+  width: 80%;
+  border-collapse: separate!important;
+}
+
 td {
+  box-sizing: border-box;
   padding: 10px 10px!important;
   border: 1px solid #ccc;
 }
 
 th {
   /*width: 30px;*/
-  margin: 10px 0;
+  /*margin: 10px 0;*/
   overflow: auto;
   vertical-align: bottom;
   text-align: center;
 }
 
 th.rotate {
-  height: 120px;
+  height: 130px;
   white-space: nowrap;
   border-bottom: 1px solid #ccc;
   border-left: 1px solid #ccc;
@@ -40,7 +88,6 @@ th.rotate > div {
   transform: rotate(270deg);
   width: 30px;
   margin: 0 auto;
-  display: block;
 }
 
 th.rotate > div > span {
@@ -48,24 +95,14 @@ th.rotate > div > span {
   display: block;
 }
 
-.clear {
-  clear: both;
-}
-
 form {
   width: 100%;
   display: inline-block;
 }
 
-table {
-  margin: 0 auto;
-  width: 80%;
-}
-
 .alignCenter {
   text-align: center;
 }
-
 
 .iconWrap {
   width: 80%;
