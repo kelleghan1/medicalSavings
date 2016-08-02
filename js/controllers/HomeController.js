@@ -93,10 +93,13 @@ thisApp
       }
 
       //  Example of post request with request object
+
       //  $http.post('https://example.com', postObj)
       //  .then(function(res){
       //  return res
       //  }
+
+      // Service call here
 
     }
 
