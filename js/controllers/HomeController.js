@@ -1,9 +1,7 @@
 thisApp
 .controller('HomeController', [
-  '$state',
   '$scope',
   function(
-    $state,
     $scope
   ){
 
@@ -41,6 +39,7 @@ thisApp
           }
         }
       }
+
       $scope.members[member-1].value = result;
       $scope.getTotalSavings();
       return result
